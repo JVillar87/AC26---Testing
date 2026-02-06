@@ -10,7 +10,8 @@ public class CalculadoraTest
         int resultado = Calculadora.Sumar(5, 3);
         Assert.Equal(8, resultado);
         Assert.True(resultado > 0);
-        Assert.NotEqual(10, resultado);           
+        Assert.NotEqual(10, resultado); 
+        Assert.IsType<int>(resultado);              
     }
 
 [Fact]
@@ -19,7 +20,8 @@ public class CalculadoraTest
         int resultado = calculadora.Restar(8, 3);
         Assert.Equal(5, resultado);
         Assert.True(resultado > 0);
-        Assert.NotEqual(10, resultado);            
+        Assert.NotEqual(10, resultado); 
+        Assert.Contains("5", resultado.ToString());         
     }
 
 [Fact]
@@ -28,7 +30,8 @@ public class CalculadoraTest
         int resultado = calculadora.Multiplicar(15, 6);
         Assert.Equal(90, resultado);
         Assert.True(resultado > 0);
-        Assert.NotEqual(10, resultado);            
+        Assert.NotEqual(10, resultado);
+        Assert.Contains("9", resultado.ToString());           
     }
 
 [Fact]
@@ -37,7 +40,7 @@ public class CalculadoraTest
         int resultado = calculadora.Dividir(48, 8);
         Assert.Equal(6, resultado);
         Assert.True(resultado > 0);
-        Assert.NotEqual(10, resultado);            
+        Assert.IsType<int>(resultado);           
     }
 
 }
